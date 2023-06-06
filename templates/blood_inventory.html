@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Blood Inventory</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Blood Type</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for unit in blood_units %}
+        <tr>
+            <td>{{ unit[1] }}</td>
+            <td>{{ unit[2] }}</td>
+            <td>{{ unit[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

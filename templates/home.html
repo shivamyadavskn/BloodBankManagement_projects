@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome to the Blood Bank Management System</h2>
+<p>
+    This is a web application for managing blood bank operations.
+</p>
+<p>
+    Please <a href="{{ url_for('login') }}">login</a> or <a href="{{ url_for('register') }}">register</a> to get started.
+</p>
+{% endblock %}

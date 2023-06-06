@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Bank Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blood Bank Management System</h1>
+        {% if 'username' in session %}
+        <nav>
+            <ul>
+                <li><h3>{{ session['username'] }}</h3></li>
+                <li><a href="{{ url_for('add_donor') }}">Add Donor</a></li>
+                <li><a href="{{ url_for('donor_list') }}">Donor List</a></li>
+                <li><a href="{{ url_for('add_staff') }}">Add Staff</a></li>
+                <li><a href="{{ url_for('staff_list') }}">Staff List</a></li>
+                <li><a href="{{ url_for('add_blood_unit') }}">Add Blood Unit</a></li>
+                <li><a href="{{ url_for('blood_inventory') }}">Blood Inventory</a></li>
+                <li><a href="{{ url_for('request_blood') }}">Request Blood</a></li>
+                <li><a href="{{ url_for('blood_requests') }}">Blood Requests</a></li>
+                <li><a href="{{ url_for('schedule_appointment') }}">Schedule Appointment</a></li>
+                <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
+                <li><a href="{{ url_for('activity_log') }}">Activity Log</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+        {% endif %}
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

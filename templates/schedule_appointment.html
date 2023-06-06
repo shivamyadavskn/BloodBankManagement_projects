@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Schedule Appointment</h2>
+<form method="POST" action="{{ url_for('schedule_appointment') }}">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+    <label for="time">Time</label>
+    <input type="time" id="time" name="time" required>
+    <button type="submit">Schedule Appointment</button>
+</form>
+{% endblock %}

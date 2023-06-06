@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Staff List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for staff in staff_list %}
+        <tr>
+            <td>{{ staff.name }}</td>
+            <td>{{ staff.position }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

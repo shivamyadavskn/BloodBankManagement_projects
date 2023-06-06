@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Log</title>
+</head>
+<body>
+    <h1>Activity Log</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Activity ID</th>
+                <th>Timestamp</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for activity in activity_log %}
+            <tr>
+                <td>{{ activity }}</td>
+                <td>{{ activity[0] }}</td>
+                <td>{{ activity[1] }}</td>
+                <td>{{ activity[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

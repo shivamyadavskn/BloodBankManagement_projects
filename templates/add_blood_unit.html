@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Blood Unit</h2>
+<form method="POST" action="{{ url_for('add_blood_unit') }}">
+    <label for="blood_type">Blood Type</label>
+    <input type="text" id="blood_type" name="blood_type" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="text" name="quantity" id="quantity" required>
+
+    <label for="storage_location">Location:</label>
+    <input type="text" name="storage_location" id="storage_location" required>
+
+    <label for="expiration_date">Expiration Date:</label>
+    <input type="date" name="expiration_date" id="expiration_date" required>
+
+    <button type="submit">Add Blood Unit</button>
+</form>
+{% endblock %}

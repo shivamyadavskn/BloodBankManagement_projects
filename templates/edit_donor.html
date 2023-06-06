@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Donor</h2>
+<form method="POST" action="{{ url_for('edit_donor', donor_id=donor_id) }}">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{ donor.name }}" required>
+    <label for="contact">Contact</label>
+    <input type="text" id="contact" name="contact" value="{{ donor.contact }}" required>
+    <label for="blood_type">Blood Type</label>
+    <input type="text" id="blood_type" name="blood_type" value="{{ donor.blood_type }}" required>
+    <label for="availability">Availability</label>
+    <input type="checkbox" id="availability" name="availability" {% if donor.availability %}checked{% endif %}>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Donor</h2>
+<form method="POST" action="{{ url_for('add_donor') }}">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="contact">Contact</label>
+    <input type="text" id="contact" name="contact" required>
+    <label for="blood_type">Blood Type</label>
+    <input type="text" id="blood_type" name="blood_type" required>
+    <label for="availability">Availability</label>
+    <input type="checkbox" id="availability" name="availability">
+    <button type="submit">Add Donor</button>
+</form>
+{% endblock %}

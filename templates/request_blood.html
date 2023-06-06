@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Request Blood</h2>
+<form method="POST" action="{{ url_for('request_blood') }}">
+
+    <label for="blood_type">Blood Type</label>
+    <input type="text" id="blood_type" name="blood_type" required>
+
+    <label for="blood_type">Location</label>
+    <input type="text" id="location" name="location" required>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <button type="submit">Request Blood</button>
+</form>
+{% endblock %}
